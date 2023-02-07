@@ -8,8 +8,17 @@ import { map } from 'rxjs/operators';
 export class UsuarioService {
   private url: string = 'https://reqres.in/api'
   constructor(private http: HttpClient) { }
+
   getUser() {
-    return this.http.get(`${this.url}/users?per_page=7`)//con el pipe se seleccione que items especificos quiero de la respuesta
-            .pipe(map((res:any)=>res['data']))
+    return this.http.get(`${this.url}/users?per_page=7&delay=4`)//con el pipe se seleccione que items especificos quiero de la respuesta
+      .pipe(map((res: any) => res['data']))
   }
+
+  getUserByID(id:string) {
+    return this.http.get(`${this.url}/users/${ id }`)//con el pipe se seleccione que items especificos quiero de la respuesta
+      .pipe(map((res: any) => res['data']))
+  }
+
+
 }
+  

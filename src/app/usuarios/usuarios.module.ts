@@ -15,7 +15,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
   ],
   exports:[
     ListaComponent,
-    UsuarioComponent
+    UsuarioComponent,
   ]
 })
 export class UsuariosModule { }
